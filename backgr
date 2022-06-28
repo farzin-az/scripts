@@ -3,11 +3,12 @@ import argparse
 import json
 import os
 
+home = os.environ.get('HOME')
 def change_number(num):
-    with open("$HOME/Code/scripts/data.json") as data_file:
+    with open(home + "/Code/scripts/data.json") as data_file:
         data = json.load(data_file)
         data["number"] = num
-    with open("$HOME/Code/scripts/data.json", "w") as write_file:
+    with open(home + "/Code/scripts/data.json", "w") as write_file:
         json.dump(data, write_file)
 
 parser = argparse.ArgumentParser()

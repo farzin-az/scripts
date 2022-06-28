@@ -2,7 +2,8 @@ import json
 import random
 import os
 
-with open("$HOME/Code/scripts/data.json") as data_file:
+home = os.environ.get('HOME')
+with open(home + "/Code/scripts/data.json") as data_file:
     data = json.load(data_file)
 
 if data['number'] == 3:
@@ -15,7 +16,7 @@ else:
     os.system('feh --bg-scale $HOME/Pictures/Wallpapers/{}.jpg'.format(prev))
     data["number"] += 1
 
-with open("$HOME/Code/scripts/data.json", "w") as write_file:
+with open(home + "/Code/scripts/data.json", "w") as write_file:
     json.dump(data, write_file)
 
 
