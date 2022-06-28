@@ -4,10 +4,10 @@ import json
 import os
 
 def change_number(num):
-    with open("/home/farzin/Code/scripts/data.json") as data_file:
+    with open("$HOME/Code/scripts/data.json") as data_file:
         data = json.load(data_file)
         data["number"] = num
-    with open("/home/farzin/Code/scripts/data.json", "w") as write_file:
+    with open("$HOME/Code/scripts/data.json", "w") as write_file:
         json.dump(data, write_file)
 
 parser = argparse.ArgumentParser()
@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 if args.next:
     change_number(3)
-    os.system('python /home/farzin/Code/scripts/feh.py')
+    os.system('python $HOME/Code/scripts/feh.py')
 
 if args.repeat and args.repeat > 0:
     change_number(args.repeat)
